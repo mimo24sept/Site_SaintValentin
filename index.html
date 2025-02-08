@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #fff0f6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+
+        #message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff69b4;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3oxMjNxbHI3cTB5d2MydTZ4cDRoYnlpczNlNjVsd3VjczVzbTlpdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26gR2YAgXvpbkeGxO/giphy.gif" alt="GIF mignon">
+
+    <div id="message">Veux-tu venir ?</div>
+
+    <div class="button-container">
+        <button id="yes" onclick="accept()">Oui</button>
+        <button id="no" onclick="reject()">Non</button>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let message = document.getElementById("message");
+        let gif = document.getElementById("gif");
+        let yesSize = 18;
+
+        function accept() {
+            message.innerHTML = "Super, on se voit le 14 !";
+            gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHN2Y2U0dm8zOW5yNWlybWFtdDN3cXlkZnF2MGZpc3Y3bmI2dDV1NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD9dAx0eNA88mwI/giphy.gif";
+            yesButton.style.display = "none";
+            noButton.style.display = "none";
+        }
+
+        function reject() {
+            message.innerHTML = "Je repose la question...";
+            yesSize += 10;
+            yesButton.style.fontSize = yesSize + "px";
+        }
+    </script>
+
+</body>
+</html>
