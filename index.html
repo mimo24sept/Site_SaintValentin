@@ -32,6 +32,8 @@
         }
 
         button {
+            padding: 15px 30px;
+            font-size: 18px;
             border: none;
             border-radius: 10px;
             background-color: #ff69b4;
@@ -43,17 +45,6 @@
         button:hover {
             background-color: #ff1493;
         }
-
-        #yes {
-            padding: 15px 30px;
-            font-size: 18px;
-        }
-
-        #no {
-            padding: 15px 30px;
-            font-size: 18px;
-        }
-
     </style>
 </head>
 <body>
@@ -72,8 +63,7 @@
         let noButton = document.getElementById("no");
         let message = document.getElementById("message");
         let gif = document.getElementById("gif");
-        let yesWidth = 150;
-        let yesHeight = 50;
+        let yesSize = 18;
 
         function accept() {
             message.innerHTML = "Super, on se voit le 14 !";
@@ -84,10 +74,8 @@
 
         function reject() {
             message.innerHTML = "Je repose la question...";
-            yesWidth += 20;
-            yesHeight += 10;
-            yesButton.style.width = yesWidth + "px";
-            yesButton.style.height = yesHeight + "px";
+            yesSize += 10;
+            yesButton.style.fontSize = yesSize + "px";
         }
     </script>
 
